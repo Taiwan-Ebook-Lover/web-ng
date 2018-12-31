@@ -21,7 +21,9 @@
         </a>
       </v-toolbar-items>
     </v-toolbar>
-    <router-view class="view-top"/>
+    <transition name="slide-x-transition">
+      <router-view class="view-top"/>
+    </transition>
   </v-app>
 
 </template>
