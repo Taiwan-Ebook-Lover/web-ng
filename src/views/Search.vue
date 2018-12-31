@@ -148,12 +148,12 @@ export default {
         .then(response => response.json())
         .then((data) => {
           this.searchResult = data;
-          for (const company in data) {
+          Object.keys(data).forEach((company) => {
             data[company].forEach((book) => {
               const bookData = { ...book, company };
               this.books.push(bookData);
             });
-          }
+          });
           this.booksResult = [...this.books];
           this.isLoading = false;
         }).catch((err) => {
